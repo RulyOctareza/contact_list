@@ -23,7 +23,7 @@ class _MasteringCRUDState extends State<ContactList> {
         context: context,
         builder: (context) {
           return SimpleDialog(
-            title: const Text('Create new data'),
+            title: const Text('Create new Contact'),
             titlePadding: const EdgeInsets.fromLTRB(16, 16, 16, 4),
             contentPadding: const EdgeInsets.all(16),
             children: [
@@ -217,6 +217,37 @@ class _MasteringCRUDState extends State<ContactList> {
           )
         ],
       ),
+      drawer: Drawer(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SafeArea(
+              child: Column(
+            children: [
+              ListTile(
+                title: const Text(
+                  'Home',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                onTap: () {},
+              ),
+              ListTile(
+                title: const Text(
+                  'Kontak',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                onTap: () {},
+              ),
+              ListTile(
+                title: const Text(
+                  'Menu',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                onTap: () {},
+              ),
+            ],
+          )),
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           create();
@@ -257,6 +288,7 @@ class _MasteringCRUDState extends State<ContactList> {
                 );
               },
             ),
+      bottomNavigationBar: const ButtonBar(),
     );
   }
 }
