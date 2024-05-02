@@ -78,18 +78,7 @@ class _MasteringCRUDState extends State<ContactList> {
     DMethod.printTitle('Read - before get data', listdata.toString());
     // move data
 
-    List<Map> initialList = [
-      {
-        'id': 001,
-        'name': 'Adi',
-        'phoneNumber': '08131831938',
-      },
-      {
-        'id': 002,
-        'name': 'Neumorphism',
-        'phoneNumber': '0876434313',
-      },
-    ];
+    List<Map> initialList = [];
 
     listdata = initialList;
 
@@ -182,7 +171,11 @@ class _MasteringCRUDState extends State<ContactList> {
 
     if (ascending) {
       listdata.sort(
-        (a, b) => a['title'].compareTo(b['title']),
+        (a, b) => a['name'].compareTo(b['name']),
+      );
+    } else {
+      listdata.sort(
+        (a, b) => b['name'].compareTo(a['name']),
       );
     }
     setState(() {});
